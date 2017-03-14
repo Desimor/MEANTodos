@@ -7,5 +7,5 @@ var todoSchema = mongoose.Schema({
     date: Number
 });
 
-var Todo = mongoose.model('Todo', animalSchema);
+var Todo = mongoose.model('Todo', todoSchema);
 module.exports = Todo;

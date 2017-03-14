@@ -11,7 +11,6 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect(mongoURI);
-
 server.use(todoRouter);
 
 server.listen(port, function(){
