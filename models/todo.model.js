@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var todoSchema = mongoose.Schema({
     priority: Number,
     category: String,
-    item: String,
+    task: String,
     date: Number
 });
 
