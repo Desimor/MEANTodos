@@ -13,6 +13,8 @@ server.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect(mongoURI);
 server.use(todoRouter);
 
+server.use(express.static(__dirname + '/public'));
+
 server.get('/', function(req, res){
     res.sendFile('index.html', {root: __dirname + '/public/html'});
 });
