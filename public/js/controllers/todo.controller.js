@@ -9,7 +9,15 @@
     $scope.newTodo = {};
     $scope.getTodos = getTodos;
     $scope.addTodo = addTodo;
+    $scope.deleteTodo = deleteTodo;
     
+    function deleteTodo(todo){
+      TodoService.delete(todo)
+                  .then(function(res){
+                    getTodos();
+                  });
+    }
+
     function addTodo(newTodo){
       console.log('Creating a new todo...');
       TodoService.create(newTodo)
@@ -17,7 +25,9 @@
                     getTodos();
                   });
     }
+
     function getTodos(){
+      console.log($scope.todos);
       console.log('Getting the todos...');
       TodoService.getAll()
                 .then(function(res){
