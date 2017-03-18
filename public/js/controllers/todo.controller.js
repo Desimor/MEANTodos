@@ -7,9 +7,9 @@
   function TodoController($scope, TodoService){
     $scope.todos = [];
     $scope.newTodo = {};
-    $scope.getTodos = getTodos;
     $scope.addTodo = addTodo;
     $scope.deleteTodo = deleteTodo;
+    getTodos();
     
     function deleteTodo(todo){
       TodoService.delete(todo)
@@ -23,6 +23,7 @@
       TodoService.create(newTodo)
                   .then(function(res){
                     getTodos();
+                    $scope.newTodo = {};
                   });
     }
 
