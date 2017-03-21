@@ -11,6 +11,7 @@
       $scope.deleteTodo = deleteTodo;
       $scope.update = update;
       $scope.edit = edit;
+      $scope.markComplete = markComplete;
 
       getTodos();
 
