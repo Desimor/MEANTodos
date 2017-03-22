@@ -1,10 +1,14 @@
 var mongoose = require('mongoose');
 
 var todoSchema = mongoose.Schema({
-    priority: Number,
-    category: String,
-    task: String,
-    date: Number
+    completed: {
+        type: Boolean,
+        default: false
+    },
+    description: {
+        type: String,
+        required: true,
+    }
 });
 
 var Todo = mongoose.model('Todo', todoSchema);
